@@ -1,24 +1,31 @@
 # README
+## アプリケーション名	
+Fit Care Health
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## アプリケーション概要	
 
-Things you may want to cover:
+## URL
+	デプロイ済みのURLを記述。デプロイが済んでいない場合は、デプロイが完了次第記述すること。
 
-* Ruby version
+## テスト用アカウント
+	ログイン機能等を実装した場合は、ログインに必要な情報を記述。またBasic認証等を設けている場合は、そのID/Passも記述すること。
 
-* System dependencies
+## 利用方法
+	このアプリケーションの利用方法を記述。
 
-* Configuration
+## 目指した課題解決
+	このアプリケーションを通じて、どのような人の、どのような課題を解決しようとしているのかを記述。
 
-* Database creation
+## 洗い出した要件
+	スプレッドシートにまとめた要件定義を記述。
 
-* Database initialization
+## 実装した機能についての画像やGIFおよびその説明
+	実装した機能について、それぞれどのような特徴があるのかを列挙する形で記述。画像はGyazoで、GIFはGyazoGIFで撮影すること。
 
-* How to run the test suite
+## 実装予定の機能
+	洗い出した要件の中から、今後実装予定の機能がある場合は、その機能を記述。
 
-* Services (job queues, cache servers, search engines, etc.)
+## データベース設計
+	ER図等を添付。
 
-* Deployment instructions
-
-* ...
+## ローカルでの動作方法
