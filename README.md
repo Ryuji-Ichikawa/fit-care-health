@@ -51,6 +51,6 @@ Fit Care Health
 	洗い出した要件の中から、今後実装予定の機能がある場合は、その機能を記述。 -->
 
 ## データベース設計
-![ER図](https://gyazo.com/647cc531902250d17f70ef9c5ad37a43)
+<img width="911" alt="647cc531902250d17f70ef9c5ad37a43" src="https://user-images.githubusercontent.com/68750516/119324141-7357b980-bcba-11eb-87bb-5d3a0e3430cc.png">
 
 <!-- ## ローカルでの動作方法 -->
