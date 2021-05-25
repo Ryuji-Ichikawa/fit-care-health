@@ -1,4 +1,5 @@
 FROM ruby:2.6.5
+WORKDIR /fit_care_health
 
 RUN apt-get update && apt-get install -y curl apt-transport-https wget && \
   curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
@@ -12,8 +13,6 @@ ADD Gemfile.lock /fit_care_health/Gemfile.lock
 
 RUN gem install bundler
 RUN bundle install
-
-WORKDIR /fit_care_health
 
 COPY . /fit_care_health
 COPY ./docker/rails/entrypoint.sh /usr/bin/
