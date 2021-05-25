@@ -7,8 +7,8 @@ RUN apt-get update && apt-get install -y curl apt-transport-https wget && \
 RUN curl -sL https://deb.nodesource.com/setup_13.x | bash - && \
   apt-get install -y nodejs
 
-COPY Gemfile /fit_care_health/Gemfile
-COPY Gemfile.lock /fit_care_health/Gemfile.lock
+ADD Gemfile /fit_care_health/Gemfile
+ADD Gemfile.lock /fit_care_health/Gemfile.lock
 
 RUN gem install bundler
 RUN bundle install
