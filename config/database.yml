@@ -1,11 +1,15 @@
 default: &default
   adapter: mysql2
   encoding: utf8
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  # dockerローカルでは下は使う、PCで繋ぐ際はコメントアウトしてる行と入れ替え
   username: <%= ENV.fetch('MYSQL_USER') { 'root' }%>
   password: <%= ENV.fetch('MYSQL_PASSWORD') {'password'}%>
   host: <%= ENV.fetch('MYSQL_HOST') %>
-  socket: /var/lib/mysql/mysql.sock
+  # PC内のローカルに繋ぐ際↑３行と入れ替え
+  # pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  # username: root
+  # password:
+  socket: /tmp/mysql.sock
 
 development:
   <<: *default
@@ -19,4 +23,4 @@ production:
   <<: *default
   database: fit_care_health_production
   username: fit_care_health
-  password: password
+  password: <%= ENV['FIT_CARE_HEALTH_DATABASE_PASSWORD'] %>
