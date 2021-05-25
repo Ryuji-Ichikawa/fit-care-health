@@ -6,13 +6,15 @@ RUN apt-get update && apt-get install -y curl apt-transport-https wget && \
   apt-get update && apt-get install -y yarn chromium-driver
 RUN curl -sL https://deb.nodesource.com/setup_13.x | bash - && \
   apt-get install -y nodejs
+
+COPY Gemfile /fit_care_health/Gemfile
+COPY Gemfile.lock /fit_care_health/Gemfile.lock
+
 RUN gem install bundler
 RUN bundle install
 
 WORKDIR /fit_care_health
 
-COPY Gemfile /fit_care_health/Gemfile
-COPY Gemfile.lock /fit_care_health/Gemfile.lock
 COPY . /fit_care_health
 COPY ./docker/rails/entrypoint.sh /usr/bin/
 
