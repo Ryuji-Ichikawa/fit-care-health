@@ -48,3 +48,6 @@ jobs:
           command: bundle exec rspec
       - store_test_results:
           path: /tmp/test-results
+      - run:
+          name: RuboCopの実行
+          command: bundle exec rubocop
