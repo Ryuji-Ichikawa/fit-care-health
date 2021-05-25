@@ -1,0 +1,41 @@
+version: '3'
+services:
+  rails:
+    build:
+      context: .
+      dockerfile: ./docker/rails/Dockerfile
+    environment:
+      RAILS_ENV: "development"
+      MYSQL_USER: "root"
+      MYSQL_PASSWORD: "example_root_password"
+      MYSQL_HOST: "mysql"
+    command: "bundle exec rails server -p 5000 -b '0.0.0.0'"
+    tty: true
+    stdin_open: true
+    depends_on:
+      - mysql
+    ports:
+      - "5000:80"
+    volumes:
+      - ./fit_care_health:/app
+      - bundle_data:/usr/local/bundle
+
+  mysql:
+    build:
+      context: .
+      dockerfile: ./docker/mysql/Dockerfile
+    environment:
+      MYSQL_ROOT_PASSWORD: "example_root_password"
+      MYSQL_USER: "sample_user"
+      MYSQL_PASSWORD: "sample_password"
+      MYSQL_DATABASE: "sample_rails_db"
+      TZ: 'Asia/Tokyo'
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - "33306:3306"
+
+volumes:
+  bundle_data:
+  mysql_data:
