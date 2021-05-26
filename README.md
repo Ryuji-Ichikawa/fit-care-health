@@ -1,5 +1,4 @@
-# アプリケーション名	
-Fit Care Health
+# Fit Care Health
 
 ---
 # アプリケーション概要	
@@ -32,14 +31,14 @@ Fit Care Health
 ---
 # 使用技術(開発環境)
 - Ruby 2.6.5
-- Ruby on Rails(6.1.3)
+- Ruby on Rails 6.1.3
 - JavaScript
-- Bootstrap
-- AWS (EC2, IAM, S3, VPC) <!--, Route53, ALB, ACM, RDS for MySQL,) -->
+- Bootstrap 5.0
+- AWS (EC2, IAM, S3, VPC, Cloudwatch) <!--, Route53, ALB, ACM, RDS for MySQL,) -->
 - Docker/docker-compose
 - CircleCI
-- rspec
-- rubocop
+- Rspec
+- Rubocop
 
 ---
 # 機能一覧
