@@ -1,7 +1,5 @@
 # Fit Care Health
-
----
-# 概要	
+	
 自身のやっているヘルスケアやメディカルケアの方法を投稿できるアプリ  
 自身の健康管理をしつつ、必要に応じて栄養素やサプリどのような運動が良いかおすすめしてもらえる機能がある 
 
@@ -30,15 +28,20 @@
 
 ---
 # 使用技術(開発環境)
-- Ruby 2.6.5
-- Ruby on Rails 6.1.3
-- JavaScript
-- Bootstrap 5.0
-- AWS (EC2, IAM, S3, VPC, Cloudwatch) <!--, Route53, ALB, ACM, RDS for MySQL,) -->
-- Docker/docker-compose
-- CircleCI
-- Rspec
-- Rubocop
+- フロントエンド
+  - HTML/CSS
+	- JavaScript
+	- Bootstrap 5.0
+- バックエンド
+	- Ruby 2.6.5
+	- Ruby on Rails 6.1.3
+	- Rspec
+	- Rubocop
+- インフラ
+	- MySQL 5.6.51
+	- AWS (EC2, IAM, S3, VPC) <!--, Route53, ALB, ACM, RDS for MySQL,) -->
+	- Docker/docker-compose
+	- CircleCI
 
 ---
 # 機能一覧
