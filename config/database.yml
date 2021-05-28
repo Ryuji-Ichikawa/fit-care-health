@@ -4,10 +4,8 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: <%= ENV.fetch('MYSQL_USER') { 'root' }%>
   host: <%= ENV.fetch('MYSQL_HOST', 'localhost') %>
-  password: <%= ENV['MYSQL_PASSWORD'] || ENV['DATABASE_PASSWORD'] || '' %>
-  socket: /var/lib/mysql/mysql.sock
-  # password: <%= ENV.fetch('MYSQL_PASSWORD') {''}%>
-  # socket: /tmp/mysql.sock
+  password: <%= ENV.fetch('MYSQL_PASSWORD') {''}%>
+  socket: /tmp/mysql.sock
 
 development:
   <<: *default
@@ -20,5 +18,8 @@ test:
 production:
   <<: *default
   database: fit_care_health_production
-  username: fit_care_health
-  password: <%= ENV['FIT_CARE_HEALTH_DATABASE_PASSWORD'] %>
+  # username: fit_care_health
+  # password: <%= ENV['FIT_CARE_HEALTH_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
