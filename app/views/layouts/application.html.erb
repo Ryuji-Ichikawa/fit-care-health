@@ -18,39 +18,56 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   
-  <header>
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Fit Care Health</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <li class="nav-item active">
-            <a class="nav-link" aria-current="page" href="#">ゲストログイン</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">新規登録</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" >ログイン</a>
-          </li>
-        </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="検索" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+    <header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="container-fluid">
+        <%= link_to "Fit Care Health", root_path, class: "navbar-brand" %>
+        <%# <a class="navbar-brand" href="#">Fit Care Health</a> %>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <% if user_signed_in? %>
+            <% if current_user.email == 'guest@example.com' %>
+              <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item active">
+                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
+                </li>
+              </ul>
+            <% else %>
+              <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item active">
+                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" >新規投稿</a>
+                </li>
+              </ul>
+            <% end %>
+          <% else %>
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item active">
+              <%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "新規登録", new_user_registration_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
+            </li>
+          </ul>
+          <% end %>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="検索" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
       </div>
-    </div>
-  </nav>
-  </header>
-  <body>
+    </nav>
+    </header>
     <%= yield %>
-  </body>
-  
-  <footer class="container">
-    <p class="float-end"><a href="#">トップに戻る</a></p>
-    <p>&copy; 2017-2021 Company, Inc. &middot; <a href="#">プライバシー</a> &middot; <a href="#">利用規約</a></p>
-  </footer>
+    <footer class="container">
+      <p class="float-end"><a href="#">トップに戻る</a></p>
+      <p>&copy; 2017-2021 Company, Inc. &middot; <a href="#">プライバシー</a> &middot; <a href="#">利用規約</a></p>
+    </footer>
 </html>
