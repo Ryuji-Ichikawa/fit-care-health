@@ -1,9 +1,24 @@
+/* ヘッダー */
 header {
   height: 56px;
 }
 
 .inner {
   margin: 20px;
+}
+
+/* メイン */
+.carousel-item {
+  height: 512px;
+  text-align: center;
+}
+
+.container h1 {
+  color: black;
+}
+.container p {
+  color: black;
+  margin-bottom: 4rem;
 }
 
 .bd-placeholder-img {
@@ -13,10 +28,8 @@ header {
   -moz-user-select: none;
   user-select: none;
 }
-.carousel-item {
-  height: 512px;
-}
 
+/* メディアクエリ */
 @media (min-width: 768px) {
   .bd-placeholder-img-lg {
     font-size: 3.5rem;
