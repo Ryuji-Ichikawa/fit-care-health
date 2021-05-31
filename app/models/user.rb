@@ -10,4 +10,8 @@ class User < ApplicationRecord
       user.profile = "No Profile"
     end
   end
+  with_options presence: true do
+    validates :nickname
+    validates :profile
+  end
 end
