@@ -13,7 +13,11 @@
           <div class="carousel-caption text-start">
             <h1>あなたも健康的な生活を</h1>
             <p>吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。</p>
-            <p><a class="btn btn-lg btn-primary" href="#" role="button">今すぐサインアップ</a></p>
+            <% if user_signed_in? %>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">投稿してみましょう</a></p>
+            <% else %>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">今すぐサインアップ</a></p>
+            <% end %>
           </div>
         </div>
       </div>
