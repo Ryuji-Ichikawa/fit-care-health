@@ -8,6 +8,11 @@
         <%= form_with model: モデル名, url: 新規登録機能へのパス, local: true do |f| %>
 
         <div class="field">
+          <%= f.label :hoge, "ユーザー名" %><br />
+          <%= f.text_field :hoge, id:"user_name" %>
+        </div>
+
+        <div class="field">
           <%= f.label :hoge, "メールアドレス" %><br />
           <%= f.email_field :hoge, id:"user_email", autofocus: true, autocomplete: "email" %>
         </div>
@@ -23,23 +28,8 @@
         </div>
 
         <div class="field">
-          <%= f.label :hoge, "ユーザー名" %><br />
-          <%= f.text_field :hoge, id:"user_name" %>
-        </div>
-
-        <div class="field">
           <%= f.label :hoge, "プロフィール" %><br />
           <%= f.text_area :hoge, class: :form__text, id:"user_profile" %>
-        </div>
-
-        <div class="field">
-          <%= f.label :hoge, "所属" %><br />
-          <%= f.text_area :hoge, class: :form__text, id:"user_occupation" %>
-        </div>
-
-        <div class="field">
-          <%= f.label :hoge, "役職" %><br />
-          <%= f.text_area :hoge, class: :form__text, id:"user_position" %>
         </div>
 
         <div class="actions">
