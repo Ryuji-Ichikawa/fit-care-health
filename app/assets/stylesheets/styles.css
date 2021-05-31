@@ -1,3 +1,11 @@
+header {
+  height: 56px;
+}
+
+.inner {
+  margin: 20px;
+}
+
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
