@@ -40,7 +40,7 @@
                   <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#" >新規投稿</a>
+                  <%= link_to "新規投稿", new_post_path, class: "nav-link" %>
                 </li>
               </ul>
             <% end %>
