@@ -12,7 +12,6 @@ class User < ApplicationRecord
   end
 
   has_many :posts
-  has_one_attached :image
 
   with_options presence: true do
     validates :nickname
