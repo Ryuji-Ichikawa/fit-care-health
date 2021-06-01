@@ -10,6 +10,9 @@ class User < ApplicationRecord
       user.profile = 'No Profile'
     end
   end
+
+  has_many :posts
+
   with_options presence: true do
     validates :nickname
     validates :profile

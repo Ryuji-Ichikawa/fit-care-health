@@ -50,4 +50,4 @@ jobs:
       #     path: /tmp/test-results
       - run:
           name: RuboCopの実行
-          command: bundle exec rubocop
+          command: bundle exec rubocop -a
