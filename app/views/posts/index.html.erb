@@ -16,10 +16,10 @@
             <% if user_signed_in? %>
               <% if current_user.email == 'guest@example.com' %>
               <% else %>
-                <p><a class="btn btn-lg btn-primary" href="#" role="button">投稿してみましょう</a></p>
+                <%= link_to "投稿してみましょう", new_post_path, class: "btn btn-lg btn-primary" %>
               <% end %>
             <% else %>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">今すぐサインアップ</a></p>
+              <%= link_to "今すぐサインアップ", new_user_session_path, class: "btn btn-lg btn-primary" %>
             <% end %>
           </div>
         </div>
