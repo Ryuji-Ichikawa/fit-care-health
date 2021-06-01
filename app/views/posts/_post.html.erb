@@ -1,9 +1,7 @@
 <div class="col-lg-4">
   <%# ヘルスケアの画像とそのリンク %>
   <%= link_to post_path(post.id), method: :get do %>
-    <%# <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"> %>
-      <% image_tag post.image, class: "bd-placeholder-img rounded-circle" %>
-    <%# </text></svg> %>
+    <% image_tag post.image, class: "bd-placeholder-img rounded-circle" %>
   <% end %>  
   <div class="card__body">
     <%# ヘルスケアのタイトル %>
@@ -15,6 +13,5 @@
     <%# ヘルスケアの投稿者名 %>
     <%= link_to "by ヘルスケアの投稿者名", root_path, class: :card__user %>
     <%= link_to "詳しくみる >>", post_path(post.id), method: :get, class: "btn btn-secondary" %>
-    <%# <p><a class="btn btn-secondary" href="#" role="button">詳しく見る &raquo;</a></p> %>
   </div>
 </div>
