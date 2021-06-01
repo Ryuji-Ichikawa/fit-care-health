@@ -167,13 +167,13 @@ header {
 .carousel-item {
   height: 512px;
   text-align: center;
+  margin-bottom: 4rem;
 }
 .container h1 {
   color: black;
 }
 .container p {
   color: black;
-  margin-bottom: 4rem;
 }
 .bd-placeholder-img {
   font-size: 1.125rem;
@@ -181,6 +181,18 @@ header {
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
+}
+.carousel {
+  margin-bottom: 4rem;
+}
+.marketing .col-lg-4 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.rounded-circle {
+  border-radius: 50%!important;
+  width: 140px;
+  height: 140px;
 }
 
 /* 詳細ページ */
