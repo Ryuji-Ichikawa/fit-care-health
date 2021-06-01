@@ -9,6 +9,7 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
   end
+
   def create
     @post = Post.new(post_params)
     if @post.save
@@ -22,9 +23,7 @@ class PostsController < ApplicationController
   end
 
   def edit
-    unless @post.user_id == current_user.id
-      redirect_to root_path
-    end
+    redirect_to root_path unless @post.user_id == current_user.id
   end
 
   def update
@@ -41,6 +40,7 @@ class PostsController < ApplicationController
   end
 
   private
+
   def post_params
     params.require(:post).permit(:title, :catch_copy, :concept, :image).merge(user_id: current_user.id)
   end
@@ -50,8 +50,6 @@ class PostsController < ApplicationController
   end
 
   def move_to_index
-    unless user_signed_in?
-      redirect_to action: :index
-    end
+    redirect_to action: :index unless user_signed_in?
   end
 end
