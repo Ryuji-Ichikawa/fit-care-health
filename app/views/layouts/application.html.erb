@@ -22,7 +22,6 @@
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <div class="container-fluid">
         <%= link_to "Fit Care Health", root_path, class: "navbar-brand" %>
-        <%# <a class="navbar-brand" href="#">Fit Care Health</a> %>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -67,7 +66,7 @@
     </header>
     <%= yield %>
     <footer class="container">
-      <p class="float-end"><a href="#">トップに戻る</a></p>
+      <%= link_to "トップに戻る", root_path, class: "float-end" %>
       <p>&copy; 2017-2021 Company, Inc. &middot; <a href="#">プライバシー</a> &middot; <a href="#">利用規約</a></p>
     </footer>
 </html>
