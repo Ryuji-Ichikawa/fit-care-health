@@ -16,8 +16,27 @@ RSpec.describe Post, type: :model do
         @post.title = ''
         @post.valid?
         expect(@post.errors.full_messages).to include("Title can't be blank")
-      end     
-      
+      end
+      it 'キャッチコピーが空では投稿できない' do
+        @post.catch_copy = ''
+        @post.valid?
+        expect(@post.errors.full_messages).to include("Catch copy can't be blank")
+      end
+      it 'コンセプトが空では投稿できない' do
+        @post.concept = ''
+        @post.valid?
+        expect(@post.errors.full_messages).to include("Concept can't be blank")
+      end
+      it '画像が空では投稿できない' do
+        @post.image = nil
+        @post.valid?
+        expect(@post.errors.full_messages).to include("Image can't be blank")
+      end
+      it 'ユーザーが紐付いていなければ投稿できない' do
+        @post.user = nil
+        @post.valid?
+        expect(@post.errors.full_messages).to include('User must exist')
+      end
     end
   end
 end
