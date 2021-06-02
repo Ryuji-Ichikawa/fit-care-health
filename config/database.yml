@@ -18,8 +18,6 @@ test:
 production:
   <<: *default
   database: fit_care_health_production
-  # username: fit_care_health
-  # password: <%= ENV['FIT_CARE_HEALTH_DATABASE_PASSWORD'] %>
   username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
