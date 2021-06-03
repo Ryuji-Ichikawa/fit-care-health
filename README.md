@@ -3,7 +3,7 @@
 自身のやっているヘルスケアやメディカルケアの方法を投稿できるアプリ  
 自身の健康管理をしつつ、必要に応じて栄養素やサプリどのような運動が良いかおすすめしてもらえる機能がある 
 
-![demo](https://gyazo.com/adbeb0981bd9c0faac459e87a785330f)
+![demo](https://i.gyazo.com/adbeb0981bd9c0faac459e87a785330f.gif)
 
 
 ---
