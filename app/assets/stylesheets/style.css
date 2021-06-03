@@ -165,7 +165,7 @@ header {
 }
 
 .carousel-item {
-  height: 450px;
+  height: 300px;
   text-align: center;
   margin-bottom: 4rem;
 }
@@ -300,11 +300,30 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-/* フッター */
+/* 動画 */
+.wrap-video{
+  overflow: hidden;
+  opacity: 0.1;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+	width: auto;
+	height: auto;
+	min-width: 100%;
+	min-height: 100%;
+  z-index: -1;
+}
 
+.main-screen{
+  position: relative;
+}
+
+/* フッター */
 .footer {
+  position: relative;
   background-color: #999;
   padding: 10px 0;
+  z-index: 10;
 }
 .copyright {
   text-align: center;

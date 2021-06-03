@@ -18,55 +18,62 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   
-    <header>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <div class="container-fluid">
-        <%= link_to "Fit Care Health", root_path, class: "navbar-brand" %>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <% if user_signed_in? %>
-            <% if current_user.email == 'guest@example.com' %>
-              <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                <li class="nav-item active">
-                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
-                </li>
-              </ul>
-            <% else %>
-              <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                <li class="nav-item active">
-                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
-                </li>
-                <li class="nav-item">
-                  <%= link_to "新規投稿", new_post_path, class: "nav-link" %>
-                </li>
-              </ul>
-            <% end %>
+  <header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+      <%= link_to "Fit Care Health", root_path, class: "navbar-brand" %>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <% if user_signed_in? %>
+          <% if current_user.email == 'guest@example.com' %>
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item active">
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
+              </li>
+            </ul>
           <% else %>
-          <ul class="navbar-nav me-auto mb-2 mb-md-0">
-            <li class="nav-item active">
-              <%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post, class: "nav-link" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "新規登録", new_user_registration_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
-            </li>
-          </ul>
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item active">
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "新規投稿", new_post_path, class: "nav-link" %>
+              </li>
+            </ul>
           <% end %>
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="検索" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
-        </div>
+        <% else %>
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item active">
+            <%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "新規登録", new_user_registration_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
+          </li>
+        </ul>
+        <% end %>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="検索" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
       </div>
-    </nav>
-    </header>
+    </div>
+  </nav>
+  </header>
+
+  <div class="wrap-video">
+    <video src="/videos/healthmove.mp4" autoplay loop muted width="100%" hight="100vh">
+  </div>
+  <div class="main-screen">
     <%= yield %>
-    <footer class="container">
-      <%= link_to "トップに戻る", root_path, class: "float-end" %>
-      <p>&copy; 2017-2021 Company, Inc. &middot; <a href="#">プライバシー</a> &middot; <a href="#">利用規約</a></p>
-    </footer>
+  </div>
+
+  <footer class="container">
+    <%= link_to "トップに戻る", root_path, class: "float-end" %>
+    <p>&copy; 2017-2021 Company, Inc. &middot; <a href="#">プライバシー</a> &middot; <a href="#">利用規約</a></p>
+  </footer>
 </html>
