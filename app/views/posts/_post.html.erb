@@ -11,7 +11,7 @@
       <%= post.concept %>
     </p>
     <%# ヘルスケアの投稿者名 %>
-    <%= link_to "by #{post.user.nickname}", root_path, class: :card__user %>
+    <%= link_to "by #{post.user.nickname}", user_path(prototype.user.id), class: :card__user %>
     <%= link_to "詳しくみる >>", post_path(post.id), method: :get, class: "btn btn-secondary" %>
   </div>
 </div>
