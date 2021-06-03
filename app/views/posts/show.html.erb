@@ -4,7 +4,7 @@
       <p class="prototype__hedding">
         <%= @post.title %>
       </p>
-      <%= link_to "by ヘルスケアの投稿者", root_path, class: :prototype__user %>
+      <%= link_to "by #{@post.user.nickname}", root_path, class: :prototype__user %>
       <%# ヘルスケアの投稿者とログインしているユーザーが同じであれば以下を表示する %>
       <% if user_signed_in? && current_user.id == @post.user_id %>
         <div class="prototype__manage">
@@ -32,18 +32,23 @@
       </div>
       <div class="prototype__comments">
         <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
-        <% if user_signed_in? || current_user.email == 'guest@example.com'%>
-          <%= form_with model: [@post, @comment],local: true do |f|%>
-            <div class="field">
-              <%= f.label :comment, "コメント" %><br />
-              <%= f.text_field :text, id:"comment_text" %>
-            </div>
-            <div class="actions">
-              <%= f.submit "送信する", class: :form__btn  %>
-            </div>
-          <% end %> 
+        <% if user_signed_in? %>
+          <%# ゲストユーザーは以下のコメントを表示する%>
+          <% if current_user.email == 'guest@example.com' %>
+            <strong><p>※※※ コメントの投稿はゲストユーザーでは行えません ※※※</p></strong>
+          <% else %>
+            <%= form_with model: [@post, @comment],local: true do |f|%>
+              <div class="field">
+                <%= f.label :comment, "コメント" %><br />
+                <%= f.text_field :text, id:"comment_text" %>
+              </div>
+              <div class="actions">
+                <%= f.submit "送信する", class: :form__btn  %>
+              </div>
+            <% end %>
+          <% end %>
         <% else %>
-          <strong><p>※※※ コメントの投稿にはゲストユーザー以外の新規登録/ログインが必要です ※※※</p></strong>
+          <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
         <% end %>
         <%# // ログインしているユーザーには上記を表示する %>
         <ul class="comments_lists">
@@ -51,7 +56,7 @@
           <% @comments.each do |comment| %>
             <li class="comments_list">
               <%= comment.text %>
-              <%= link_to comment.user.name, user_path(comment.user_id), class: :comment_user %>
+              <%= link_to comment.user.nickname, root_path, class: :comment_user %>
             </li>
           <% end %>
           <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
