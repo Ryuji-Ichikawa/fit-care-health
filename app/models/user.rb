@@ -12,6 +12,7 @@ class User < ApplicationRecord
   end
 
   has_many :posts
+  has_many :comments
 
   with_options presence: true do
     validates :nickname
