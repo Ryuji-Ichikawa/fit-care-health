@@ -24,7 +24,7 @@
         <%= "#{@user.nickname}さんのヘルスケア"%>
       </h2>
       <div class="user__card">
-        <%# 部分テンプレートでそのユーザーが投稿したヘルスケア投稿一覧を表示する %>
+        
         <%= render partial: "posts/post", collection: @posts %>
       </div>
     </div>
