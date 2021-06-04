@@ -10,8 +10,8 @@ class User < ApplicationRecord
       user.profile = 'No Profile'
     end
   end
-  def already_liked?(post)
-    self.likes.exists?(post_id: post.id)
+  def liked_by?(post)
+    likes.where(post_id: post.id).exists?
   end
   has_many :posts
   has_many :comments, dependent: :destroy
