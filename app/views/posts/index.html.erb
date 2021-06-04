@@ -42,7 +42,14 @@
         <div class="carousel-caption text-start">
           <h1>自身の健康をチェックしてみませんか？</h1>
           <p>しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。</p>
-          <p><a class="btn btn-lg btn-primary" href="#" role="button">ギャラリーをみる</a></p>
+          <% if user_signed_in? %>
+            <% if current_user.email == 'guest@example.com' %>
+            <% else %>
+              <%= link_to "プロフィール", user_path(current_user.id), class: "btn btn-lg btn-primary" %>
+            <% end %>
+          <% else %>
+            <%= link_to "今すぐサインアップ", new_user_session_path, class: "btn btn-lg btn-primary" %>
+          <% end %>
         </div>
       </div>
     </div>
