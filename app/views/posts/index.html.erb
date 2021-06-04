@@ -59,7 +59,11 @@
 
   <div class="container marketing">
     <div class="row">
-    <%= render partial: "post", collection: @posts %>
+    <% if @search_posts %>
+      <%= render partial: "post", collection: @search_posts %>
+    <% else %>
+      <%= render partial: "post", collection: @posts %>
+    <% end %>
     </div>
     <hr class="featurette-divider">
     <div class="row featurette">
