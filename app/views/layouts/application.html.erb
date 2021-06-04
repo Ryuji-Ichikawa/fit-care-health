@@ -57,8 +57,10 @@
         </ul>
         <% end %>
         <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="検索" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
+          <%= search_form_for @search, url: list_posts_path do |f| %>
+            <%= f.text_field :title_cont, placeholder: '検索', class: "form-control me-2" %>
+            <%= f.submit ("検索する"), class: "btn btn-outline-success" %>
+          <% end %>
         </form>
       </div>
     </div>

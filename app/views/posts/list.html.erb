@@ -1,0 +1,26 @@
+<% count = 0 %>
+<% @search_posts.each do |post| %>
+<hr class="featurette-divider">
+  <div class="row featurette">
+    <% if count == 0 || count % 2 == 0 %>
+        <div class="col-md-7 order-md-2">
+    <% else %>
+        <div class="col-md-7"> 
+    <% end %>
+    <%= link_to post.title, post_path(post.id), method: :get, class: "featurette-heading"%>
+    <p class="lead"><%= post.concept %></p>
+        </div>
+    <% if count == 0 || count % 2 == 0 %>
+        <div class="col-md-5 order-md-1">
+    <% else %>
+        <div class="col-md-5"> 
+    <% end %>
+      <%= link_to post_path(post.id), method: :get do %>
+        <% image_tag post.image, class: "bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" %>
+      <% end %>
+    <%= link_to "by #{post.user.nickname}", user_path(post.user.id), class: :card__user %>
+        </div>
+  </div>
+    <% count += 1 %>
+<% end %>
+<hr class="featurette-divider">
