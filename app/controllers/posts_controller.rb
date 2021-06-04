@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :move_to_index, except: [:index, :show, :search]
+  before_action :move_to_index, except: [:index, :show]
   def index
     @posts = Post.all
   end
@@ -41,12 +41,7 @@ class PostsController < ApplicationController
     redirect_to root_path
   end
 
-  def search
-    @posts = Post.search(params[:keyword])
-  end
-
   private
-
   def post_params
     params.require(:post).permit(:title, :catch_copy, :concept, :image).merge(user_id: current_user.id)
   end
