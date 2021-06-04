@@ -331,6 +331,26 @@ header {
   font-size: 10px;
 }
 
+  /* likes.scss */
+
+.like-link {
+  text-decoration: none;
+}
+
+.like-link:hover {
+  background-color: #fff!important;
+}
+
+.like-btn {
+  font-size: 15px;
+  color: #808080;
+}
+ 
+.unlike-btn {
+  font-size: 15px;
+  color: #e54747;
+}
+
 /* タブレット対応 */
 @media (max-width: 1024px) {
   .inner {
