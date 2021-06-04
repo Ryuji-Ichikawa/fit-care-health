@@ -1,8 +1,8 @@
+<% count = 0 %>
 <% @search_posts.each do |post| %>
 <hr class="featurette-divider">
   <div class="row featurette">
-    <%# <div class="col-md-7"> %>
-    <% if post.id == 0 || post.id % 2 == 0 %>
+    <% if count == 0 || count % 2 == 0 %>
         <div class="col-md-7 order-md-2">
     <% else %>
         <div class="col-md-7"> 
@@ -10,8 +10,7 @@
     <%= link_to post.title, post_path(post.id), method: :get, class: "featurette-heading"%>
     <p class="lead"><%= post.concept %></p>
         </div>
-    <%# <div class="col-md-5"> %>
-    <% if post.id == 0 || post.id % 2 == 0 %>
+    <% if count == 0 || count % 2 == 0 %>
         <div class="col-md-5 order-md-1">
     <% else %>
         <div class="col-md-5"> 
@@ -22,5 +21,6 @@
     <%= link_to "by #{post.user.nickname}", user_path(post.user.id), class: :card__user %>
         </div>
   </div>
+    <% count += 1 %>
 <% end %>
 <hr class="featurette-divider">
