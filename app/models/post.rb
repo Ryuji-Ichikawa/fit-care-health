@@ -9,4 +9,10 @@ class Post < ApplicationRecord
     validates :concept
     validates :image
   end
+  def self.search(search)
+    if search != ""
+      Post.where('text LIKE(?)', "%#{search}%")
+    else
+      Post.all
+    end
 end
