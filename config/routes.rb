@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     collection do
       get 'list'
     end
+    post 'likes' => "likes#create"
+    delete 'likes' => "likes#destroy"
   end
   resources :users, only: :show
 

@@ -331,6 +331,39 @@ header {
   font-size: 10px;
 }
 
+  /* いいねscss */
+
+.like-link {
+  text-decoration: none;
+}
+
+.like-link:hover {
+  background-color: #fff!important;
+}
+
+.unlike {
+  font-size: 15px;
+  color: #e54747;
+}
+
+.like-btn {
+  font-size: 15px;
+  color: #808080;
+}
+ 
+.unlike-btn {
+  font-size: 15px;
+  color: #e54747;
+  animation: anime alternate 0.5s;
+}
+
+@keyframes anime{
+  0% {transform: translateY(0px);}
+  50% {transform: translateY(-5px);}
+  100% {transform: translateY(0px);}
+}
+
+
 /* タブレット対応 */
 @media (max-width: 1024px) {
   .inner {

@@ -22,6 +22,7 @@ class PostsController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @post.comments.includes(:user)
+    @like = Like.new
   end
 
   def edit

@@ -10,8 +10,9 @@
       <%# ヘルスケアのキャッチコピー %>
       <%= post.catch_copy %>
     </p>
-    <%# ヘルスケアの投稿者名 %>
     <%= link_to "詳しくみる >>", post_path(post.id), method: :get, class: "btn btn-secondary" %>
+    <i class="fa fa-heart unlike"><%= post.liked_users.count %></i>
+    <%# ヘルスケアの投稿者名 %>
     <%= link_to "by #{post.user.nickname}", user_path(post.user.id), class: :card__user %>
   </div>
 </div>
