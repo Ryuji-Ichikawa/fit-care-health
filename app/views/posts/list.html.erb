@@ -8,7 +8,7 @@
         <div class="col-md-7"> 
     <% end %>
     <%= link_to post.title, post_path(post.id), method: :get, class: "featurette-heading"%>
-    <i class="fa fa-heart unlike-btn"><%= post.liked_users.count %></i>
+    <i class="fa fa-heart unlike"><%= post.liked_users.count %></i>
     <p class="lead"><%= post.concept %></p>
         </div>
     <% if count == 0 || count % 2 == 0 %>
