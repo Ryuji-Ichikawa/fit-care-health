@@ -1,8 +1,8 @@
 <% if user_signed_in? %>
   <% if current_user.already_liked?(@post) %>
-    <%= button_to 'いいねをやめる', post_like_path(@post), method: :delete %><i class="fa fa-heart unlike-btn"><%= @post.likes.count %></i>
+    <%= button_to 'いいねをやめる', post_likes_path(@post), method: :delete, remote: true, id: :"post_#{@post.id}" %><i class="fa fa-heart unlike-btn"><%= @post.likes.count %></i>
   <% else %>
-    <%= button_to 'いいね', post_likes_path(@post) %><i class="fa fa-heart like-btn"><%= @post.likes.count %></i>
+    <%= button_to 'いいね', post_likes_path(@post), method: :post, remote: true, id: :"post_#{@post.id}" %><i class="fa fa-heart like-btn"><%= @post.likes.count %></i>
   <% end %>
   <h5>いいねしたユーザー</h5>
   <% @post.liked_users.each do |user| %>
