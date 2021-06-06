@@ -78,3 +78,104 @@
 ---
 # データベース設計
 <img width="900" alt="5fa8f0cae8b9169976949c272499c7c9" src="https://user-images.githubusercontent.com/68750516/119324811-33450680-bcbb-11eb-99e9-18fca609e98c.png">
+
+# テーブル設計
+
+## users テーブル
+
+| Column             | Type   | Options                   |
+| ------------------ | ------ | ------------------------- |
+| nickname           | string | null: false               |
+| email              | string | null: false, unique: true |
+| encrypted_password | string | null: false               |
+| profile            | text   | null: false               |
+| birthday           | date   | null: false               |
+
+### Association
+
+- has_many :posts
+- has_many :comments, dependent: :destroy
+- has_many :likes,    dependent: :destroy
+- has_many :liked_posts, through: :likes, source: :post
+- has_many :follows
+- has_one  :statuses
+- has_one_attached :image
+
+
+## posts テーブル
+
+| Column                | Type       | Options                        |
+| --------------------- | ---------- | ------------------------------ |
+| title                 | string     | null: false                    |
+| catch_copy            | text       | null: false                    |
+| concept               | text       | null: false                    |
+| user                  | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to  :user
+- has_many    :comments, dependent: :destroy
+- has_many    :likes,    dependent: :destroy
+- has_many    :liked_users, through: :likes, source: :user
+- has_one_attached    :image
+
+## comments テーブル
+
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| text      | text       | null: false                    |
+| user      | references | null: false, foreign_key: true |
+| post      | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :post
+
+## likes テーブル
+
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| user      | references | null: false, foreign_key: true |
+| post      | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :post
+
+## follows テーブル
+
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| user      | references | null: false, foreign_key: true |
+| post      | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :post
+
+## tags テーブル
+
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| user      | references | null: false, foreign_key: true |
+| post      | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :post
+
+## tag_maps テーブル
+
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| user      | references | null: false, foreign_key: true |
+| post      | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :post
