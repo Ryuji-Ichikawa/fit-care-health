@@ -83,13 +83,14 @@
 
 ## users テーブル
 
-| Column             | Type   | Options                   |
-| ------------------ | ------ | ------------------------- |
-| nickname           | string | null: false               |
-| email              | string | null: false, unique: true |
-| encrypted_password | string | null: false               |
-| profile            | text   | null: false               |
-| birthday           | date   | null: false               |
+| Column             | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |
+| nickname           | string     | null: false                    |
+| email              | string     | null: false, unique: true      |
+| encrypted_password | string     | null: false                    |
+| profile            | text       | null: false                    |
+| birthday           | date       | null: false                    |
+| status             | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -97,7 +98,10 @@
 - has_many :comments, dependent: :destroy
 - has_many :likes,    dependent: :destroy
 - has_many :liked_posts, through: :likes, source: :post
-- has_many :follows
+- has_many :following_relationships, foreign_key: 'follower_id', class_name: 'FollowRelationship', dependent: :destroy
+- has_many :followings, through: :following_relationships
+- has_many :follower_relationships, foreign_key: 'following_id', class_name: 'FollowRelationship', dependent: :destroy
+- has_many :followers, through: :follower_relationships
 - has_one  :statuses
 - has_one_attached :image
 
@@ -146,36 +150,37 @@
 
 ## follows テーブル
 
-| Column    | Type       | Options                        |
-| --------- | ---------- | ------------------------------ |
-| user      | references | null: false, foreign_key: true |
-| post      | references | null: false, foreign_key: true |
+| Column    | Type       | Options                                             |
+| --------- | ---------- | --------------------------------------------------- |
+| follower  | references | null: false, foreign_key: true { to_table: :users } |
+| following | references | null: false, foreign_key: true { to_table: :users } |
 
 ### Association
 
-- belongs_to :user
-- belongs_to :post
+- belongs_to :follower,  class_name: 'User'
+- belongs_to :following, class_name: 'User'
+
 
 ## tags テーブル
 
 | Column    | Type       | Options                        |
 | --------- | ---------- | ------------------------------ |
-| user      | references | null: false, foreign_key: true |
-| post      | references | null: false, foreign_key: true |
+| name      | text       | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :user
-- belongs_to :post
+- has_many :tag_maps, dependent: :destroy
+- has_many :posts, through: :tag_maps
+
 
 ## tag_maps テーブル
 
 | Column    | Type       | Options                        |
 | --------- | ---------- | ------------------------------ |
-| user      | references | null: false, foreign_key: true |
 | post      | references | null: false, foreign_key: true |
+| tag       | references | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :user
 - belongs_to :post
+- belongs_to :tag
