@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments, only: :create
     collection do
-      get 'list'
+      get 'search'
     end
     post 'likes' => "likes#create"
     delete 'likes' => "likes#destroy"
