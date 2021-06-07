@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     passwords:     'users/passwords'
   }
   root to: 'posts#index'
+
   resources :posts do
     resources :comments, only: :create
     collection do
