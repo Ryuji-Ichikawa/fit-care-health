@@ -57,12 +57,12 @@
           </li>
         </ul>
         <% end %>
-        <form class="d-flex">
-          <%= search_form_for @search, url: search_posts_path, local: true do |f| %>
-            <%= f.text_field :title_cont, placeholder: '検索', class: "form-control me-2" %>
-            <%= f.submit ("検索する"), class: "btn btn-outline-success" %>
-          <% end %>
-        </form>
+
+        <%= search_form_for @search, url: search_posts_path, local: true, class: "d-flex" do |f| %>
+          <%= f.text_field :title_cont, placeholder: '検索', class: "form-control me-2" %>
+          <%= f.submit ("検索する"), class: "btn btn-outline-success" %>
+        <% end %>
+        
       </div>
     </div>
   </nav>
