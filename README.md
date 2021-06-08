@@ -80,11 +80,8 @@
 
 ---
 # データベース設計
-<img width="900" alt="5fa8f0cae8b9169976949c272499c7c9" src="https://user-images.githubusercontent.com/68750516/119324811-33450680-bcbb-11eb-99e9-18fca609e98c.png">
-
-# テーブル設計
-
-## users テーブル
+## テーブル設計
+### users テーブル
 
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
@@ -95,7 +92,7 @@
 | birthday           | date       | null: false                    |
 | status             | references | null: false, foreign_key: true |
 
-### Association
+#### Association
 
 - has_many :posts
 - has_many :comments, dependent: :destroy
@@ -109,7 +106,7 @@
 - has_one_attached :image
 
 
-## posts テーブル
+### posts テーブル
 
 | Column                | Type       | Options                        |
 | --------------------- | ---------- | ------------------------------ |
@@ -118,7 +115,7 @@
 | concept               | text       | null: false                    |
 | user                  | references | null: false, foreign_key: true |
 
-### Association
+#### Association
 
 - belongs_to  :user
 - has_many    :comments, dependent: :destroy
@@ -126,7 +123,7 @@
 - has_many    :liked_users, through: :likes, source: :user
 - has_one_attached    :image
 
-## comments テーブル
+### comments テーブル
 
 | Column    | Type       | Options                        |
 | --------- | ---------- | ------------------------------ |
@@ -134,56 +131,60 @@
 | user      | references | null: false, foreign_key: true |
 | post      | references | null: false, foreign_key: true |
 
-### Association
+#### Association
 
 - belongs_to :user
 - belongs_to :post
 
-## likes テーブル
+### likes テーブル
 
 | Column    | Type       | Options                        |
 | --------- | ---------- | ------------------------------ |
 | user      | references | null: false, foreign_key: true |
 | post      | references | null: false, foreign_key: true |
 
-### Association
+#### Association
 
 - belongs_to :user
 - belongs_to :post
 
-## follows テーブル
+### follows テーブル
 
 | Column    | Type       | Options                                             |
 | --------- | ---------- | --------------------------------------------------- |
 | follower  | references | null: false, foreign_key: true { to_table: :users } |
 | following | references | null: false, foreign_key: true { to_table: :users } |
 
-### Association
+#### Association
 
 - belongs_to :follower,  class_name: 'User'
 - belongs_to :following, class_name: 'User'
 
 
-## tags テーブル
+### tags テーブル
 
 | Column    | Type       | Options                        |
 | --------- | ---------- | ------------------------------ |
 | name      | text       | null: false, foreign_key: true |
 
-### Association
+#### Association
 
 - has_many :tag_maps, dependent: :destroy
 - has_many :posts, through: :tag_maps
 
 
-## tag_maps テーブル
+### tag_maps テーブル
 
 | Column    | Type       | Options                        |
 | --------- | ---------- | ------------------------------ |
 | post      | references | null: false, foreign_key: true |
 | tag       | references | null: false, foreign_key: true |
 
-### Association
+#### Association
 
 - belongs_to :post
 - belongs_to :tag
+
+## ER図
+
+<img width="900" alt="5fa8f0cae8b9169976949c272499c7c9" src="https://user-images.githubusercontent.com/68750516/119324811-33450680-bcbb-11eb-99e9-18fca609e98c.png">

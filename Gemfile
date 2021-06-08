@@ -70,3 +70,4 @@ gem 'pry-rails'
 gem 'bootstrap', '~> 5.0.0.alpha1'
 gem 'ransack'
 gem 'font-awesome-sass'
+gem "aws-sdk-s3", require: false
