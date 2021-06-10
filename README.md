@@ -8,7 +8,7 @@
 実装した機能について、それぞれどのような特徴があるのかを列挙する形で記述。画像はGyazoで、GIFはGyazoGIFで撮影すること。 -->
 ## TOP画像
 
-![demo](https://i.gyazo.com/adbeb0981bd9c0faac459e87a785330f.gif)
+[![Image from Gyazo](https://i.gyazo.com/f74796ba33b071797f472ece530f410c.gif)](https://gyazo.com/f74796ba33b071797f472ece530f410c)
 
 
 ---
