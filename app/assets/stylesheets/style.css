@@ -308,7 +308,7 @@ video {
 .wrap-video{
   position: fixed; top:20px; bottom: -50px;
   overflow: hidden;
-  opacity: 0.3;
+  opacity: 0.4;
   width: 100%;
 	width: auto;
 	height: auto;
