@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-  <% if current_user.email == 'guest@example.com' %>
+  <% if current_user.id == @post.user_id || current_user.email == 'guest@example.com'  %>
     <h5>いいね件数: <i class="fa fa-heart unlike"><%= @post.likes.count %></i></h5>
   <% else %>
     <% if current_user.already_liked?(@post) %>
