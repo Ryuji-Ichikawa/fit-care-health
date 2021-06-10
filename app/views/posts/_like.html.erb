@@ -1,12 +1,16 @@
 <% if user_signed_in? %>
-  <% if current_user.already_liked?(@post) %>
-    <%= button_to 'いいねをやめる', post_likes_path(@post), method: :delete, remote: true, id: :"post_#{@post.id}" %><i class="fa fa-heart unlike-btn"></i><%= @post.likes.count %>
+  <% if current_user.email == 'guest@example.com' %>
+    <h5>いいね件数: <i class="fa fa-heart unlike"><%= @post.likes.count %></i></h5>
   <% else %>
-    <%= button_to 'いいね', post_likes_path(@post), method: :post, remote: true, id: :"post_#{@post.id}" %><i class="fa fa-heart like-btn"></i><%= @post.likes.count %>
-  <% end %>
-  <h5>いいねしたユーザー</h5>
-  <% @post.liked_users.each do |user| %>
-    <%= user.nickname %>
+    <% if current_user.already_liked?(@post) %>
+      <%= button_to 'いいねをやめる', post_likes_path(@post), method: :delete, remote: true, id: :"post_#{@post.id}" %><i class="fa fa-heart unlike-btn"></i><%= @post.likes.count %>
+    <% else %>
+      <%= button_to 'いいね', post_likes_path(@post), method: :post, remote: true, id: :"post_#{@post.id}" %><i class="fa fa-heart like-btn"></i><%= @post.likes.count %>
+    <% end %>
+    <h5>いいねしたユーザー</h5>
+      <% @post.liked_users.each do |user| %>
+        <%= user.nickname %>
+      <% end %>
   <% end %>
 <% else %>
   <h5>いいね件数: <i class="fa fa-heart unlike"><%= @post.likes.count %></i></h5>
