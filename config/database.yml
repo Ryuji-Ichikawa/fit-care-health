@@ -6,7 +6,7 @@ default: &default
   host: <%= ENV.fetch('MYSQL_HOST', 'localhost') %>
   password: <%= ENV.fetch('MYSQL_PASSWORD') {''}%>
   socket: /tmp/mysql.sock
-
+  
 development:
   <<: *default
   database: fit_care_health_development
@@ -21,3 +21,5 @@ production:
   username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
+  host: aws-fit-care-health-web.czlk4zcpjgxh.ap-northeast-1.rds.amazonaws.com
+  
