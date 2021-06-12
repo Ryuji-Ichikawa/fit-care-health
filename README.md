@@ -55,7 +55,7 @@
 	- Rubocop
 - インフラ
 	- MySQL 5.6.51
-	- AWS (VPC, IAM, EC2, RDS(MySQL), S3, Route53) <!-- ALB, ACM, ) -->
+	- AWS (VPC, IAM, EC2, RDS(MySQL), S3, Route53, ALB, ACM)
 	- Docker/docker-compose
 	- CircleCI
 
