@@ -13,7 +13,7 @@
 
 ---
 ## URL
- https://fit-care-health.herokuapp.com/
+ https://fit-care-health.com/
 
 ## テスト用アカウント
 
