@@ -320,7 +320,7 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   listen (~> 3.3)
   mini_magick
-  mysql2
+  mysql2 (= 0.5.3)
   pry-rails
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
