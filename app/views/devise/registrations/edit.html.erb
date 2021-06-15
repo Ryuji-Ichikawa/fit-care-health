@@ -20,16 +20,6 @@
         </div>
 
         <div class="field">
-          <%= f.label :password, "パスワード（6文字以上）" %><br />
-          <%= f.password_field :password, id:"user_password", autocomplete: "new-password" %>
-        </div>
-
-        <div class="field">
-          <%= f.label :password_confirmation, "パスワード再入力" %><br />
-          <%= f.password_field :password_confirmation, id:"user_password_confirmation", autocomplete: "new-password" %>
-        </div>
-
-        <div class="field">
           <%= f.label :profile, "プロフィール" %><br />
           <%= f.text_area :profile, class: :form__text, id:"user_profile" %>
         </div>

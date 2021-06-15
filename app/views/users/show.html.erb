@@ -20,6 +20,12 @@
           </tr>
         </tbody>
       </table>
+        <% if user_signed_in? && current_user.id == @user.id %>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <%= link_to "編集する", edit_user_registration_path, class: "btn btn-primary me-md-2" %>
+          </div>
+        <% end %>
+
       <h2 class="page-heading">
         <%= "#{@user.nickname}さんのヘルスケア"%>
       </h2>
