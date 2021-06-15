@@ -5,12 +5,12 @@ class UsersController < ApplicationController
   end
 
   def edit
-    redirect_to root_path unless @post.user_id == current_user.id
+    redirect_to root_path unless @user.id == current_user.id
   end
 
   def update
-    if @user.update(post_params)
-      redirect_to post_path
+    if @user.update(user_params)
+      redirect_to user_path
     else
       render :edit
     end
