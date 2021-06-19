@@ -1,18 +1,14 @@
 <div class="col-lg-4">
-  <%# ヘルスケアの画像とそのリンク %>
   <%= link_to post_path(post.id), method: :get do %>
     <% image_tag post.image, class: "bd-placeholder-img rounded-circle" %>
   <% end %>  
   <div class="card__body">
-    <%# ヘルスケアのタイトル %>
     <%= link_to post.title, post_path(post.id), method: :get, class: :card__title%>
     <p class="card__summary">
-      <%# ヘルスケアのキャッチコピー %>
       <%= post.catch_copy %>
     </p>
     <%= link_to "詳しくみる >>", post_path(post.id), method: :get, class: "btn btn-secondary" %>
     <i class="fa fa-heart unlike"><%= post.liked_users.count %></i>
-    <%# ヘルスケアの投稿者名 %>
     <%= link_to "by #{post.user.nickname}", user_path(post.user.id), class: :card__user %>
   </div>
 </div>
