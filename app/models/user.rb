@@ -17,10 +17,10 @@ class User < ApplicationRecord
   has_many :liked_posts, through: :likes, source: :post
   has_one_attached :image
 
-  has_many :following_relationships, foreign_key: "follower_id", class_name: "Relationship",  dependent: :destroy
-  has_many :following, through: :following_relationships
-  has_many :follower_relationships, foreign_key: "following_id", class_name: "Relationship", dependent: :destroy
-  has_many :followers, through: :follower_relationships
+  has_many :following_follows, foreign_key: "follower_id", class_name: "Follow",  dependent: :destroy
+  has_many :following, through: :following_follows
+  has_many :follower_follows, foreign_key: "following_id", class_name: "Follow", dependent: :destroy
+  has_many :followers, through: :follower_follows
 
   with_options presence: true do
     validates :nickname
@@ -28,14 +28,14 @@ class User < ApplicationRecord
   end
   
   def following?(user)
-    following_relationships.find_by(following_id: user.id)
+    following_follows.find_by(following_id: user.id)
   end
 
   def follow(user)
-    following_relationships.create!(following_id: user.id)
+    following_follows.create!(following_id: user.id)
   end
 
   def unfollow(user)
-    following_relationships.find_by(following_id: user.id).destroy
+    following_follows.find_by(following_id: user.id).destroy
   end
 end
