@@ -34,22 +34,13 @@
         <%= render partial: "posts/post", collection: @posts %>
       </div>
       <h3>いいねしている投稿</h3>
-        <% @user.liked_posts.each do |post| %>
-          <%= post.user.email %>
-          <%= post.title %>
-        <% end %>
-      <div class="follower">
-        <%= link_to followers_user_path(@user.id) do %>
-          <h5 style="color: black;">フォロワー<%= @user.followers.count %>人</h5>
-        <% end %>
-      </div>
-      <div class="follow">
-        <%= link_to following_user_path(@user.id) do %>
-          <h5 style="color: black;">フォロー<%= @user.following.count %>人</h5>
-        <% end %>
-      </div>
-      <div>
-          <%= render "follow_form" %>
+      <% @user.liked_posts.each do |post| %>
+        <%= post.user.email %>
+        <%= post.title %>
+      <% end %>
+      <h3>フォロー・フォロワー数</h3>
+      <div id="follow_<%= @user.id %>">
+        <%= render "follow_form" %>
       </div>
     </div>
   </div>
