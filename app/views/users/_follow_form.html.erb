@@ -1,9 +1,14 @@
 <% if user_signed_in? && @user != current_user %>
   <div id="follow_form">
     <% if current_user.following?(@user) %>
-      <%= render "unfollow" %>
+      <%= form_for(current_user, url: follow_path(@user), method: :delete, remote: true) do |f| %>
+        <%= f.submit "フォロー解除", class: "btn btn-outline-secondary" %>
+      <% end %>
     <% else %>
-      <%= render "follow" %>
+      <%= form_for(current_user, url: follows_path, method: :post, remote: true) do |f| %>
+        <%= hidden_field_tag :following_id, @user.id %>
+        <%= f.submit "フォローする", class: "btn btn-outline-secondary" %>
+      <% end %>
     <% end %>
   </div>
 <% end %>
