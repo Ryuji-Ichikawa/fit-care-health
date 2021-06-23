@@ -8,8 +8,9 @@ class User < ApplicationRecord
       user.profile = 'No Profile'
     end
   end
+
   def already_liked?(post)
-    self.likes.exists?(post_id: post.id)
+    likes.exists?(post_id: post.id)
   end
   has_many :posts
   has_many :comments, dependent: :destroy
@@ -17,16 +18,16 @@ class User < ApplicationRecord
   has_many :liked_posts, through: :likes, source: :post
   has_one_attached :image
 
-  has_many :following_follows, foreign_key: "follower_id", class_name: "Follow",  dependent: :destroy
+  has_many :following_follows, foreign_key: 'follower_id', class_name: 'Follow', dependent: :destroy
   has_many :followings, through: :following_follows
-  has_many :follower_follows, foreign_key: "following_id", class_name: "Follow", dependent: :destroy
+  has_many :follower_follows, foreign_key: 'following_id', class_name: 'Follow', dependent: :destroy
   has_many :followers, through: :follower_follows
 
   with_options presence: true do
     validates :nickname
     validates :profile
   end
-  
+
   def following?(user)
     following_follows.find_by(following_id: user.id)
   end

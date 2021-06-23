@@ -1,5 +1,4 @@
 require 'rails_helper'
 
-RSpec.describe "Follows", type: :request do
-
+RSpec.describe 'Follows', type: :request do
 end
