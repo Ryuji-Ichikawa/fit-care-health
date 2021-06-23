@@ -25,7 +25,7 @@
             <%= link_to "編集する", edit_user_registration_path, class: "btn btn-primary me-md-2" %>
           </div>
         <% end %>
-
+      <%# ユーザーの投稿を一覧表示 %>
       <h2 class="page-heading">
         <%= "#{@user.nickname}さんのヘルスケア"%>
       </h2>
@@ -33,11 +33,13 @@
         
         <%= render partial: "posts/post", collection: @posts %>
       </div>
+      <%# いいねの処理 %>
       <h3>いいねしている投稿</h3>
       <% @user.liked_posts.each do |post| %>
         <%= post.user.email %>
         <%= post.title %>
       <% end %>
+      <%# フォロー・フォロワーの処理 %>
       <h3>フォロー・フォロワー数</h3>
       <div id="follow_<%= @user.id %>">
         <%= render "follow_form" %>
