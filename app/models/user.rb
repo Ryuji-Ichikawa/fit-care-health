@@ -18,7 +18,7 @@ class User < ApplicationRecord
   has_one_attached :image
 
   has_many :following_follows, foreign_key: "follower_id", class_name: "Follow",  dependent: :destroy
-  has_many :following, through: :following_follows
+  has_many :followings, through: :following_follows
   has_many :follower_follows, foreign_key: "following_id", class_name: "Follow", dependent: :destroy
   has_many :followers, through: :follower_follows
 

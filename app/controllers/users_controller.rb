@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   def following
     #@userがフォローしているユーザー
     @user  = User.find(params[:id])
-    @users = @user.following
+    @users = @user.followings
     render 'show_follow'
   end
 
