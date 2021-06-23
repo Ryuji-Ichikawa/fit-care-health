@@ -1,9 +1,13 @@
 <% @user.followings.each do |user| %>
-  <table>
+  <table class="table">
     <tr>
-      <td>  <%= user.nickname %> </td>
+      <td class="table__col2"><%= image_tag user.image, size: '150x150' %></td>
+    </tr>
+    <tr>
+      <td>  <%= "#{user.nickname}さん" %> </td>
+    </tr>
+    <tr>
       <td><%= link_to '詳細', user_path(user) %></td>
     </tr>
-
   </table>
 <% end %>
