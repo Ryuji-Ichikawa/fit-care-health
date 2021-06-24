@@ -55,6 +55,8 @@
 	- Rubocop
 - インフラ
 	- MySQL 5.6.51
+	- Nginx
+	- Unicorn
 	- AWS (VPC, IAM, EC2, RDS(MySQL), S3, Route53, ALB, ACM, CloudWatch)
 	- Docker/docker-compose
 	- CircleCI
