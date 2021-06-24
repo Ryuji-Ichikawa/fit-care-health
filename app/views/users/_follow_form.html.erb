@@ -1,14 +1,14 @@
-<% if user_signed_in? && @user != current_user %>
-  <div class="follower">
-    <%= link_to followers_user_path(@user.id) do %>
-      <h5 style="color: black;">フォロワー<%= @user.followers.count %>人</h5>
-    <% end %>
-  </div>
-  <div class="follow">
-    <%= link_to following_user_path(@user.id) do %>
-      <h5 style="color: black;">フォロー<%= @user.followings.count %>人</h5>
-    <% end %>
-  </div>
+<div class="follower">
+  <%= link_to followers_user_path(@user.id) do %>
+    <h5 style="color: black;">フォロワー<%= @user.followers.count %>人</h5>
+  <% end %>
+</div>
+<div class="follow">
+  <%= link_to following_user_path(@user.id) do %>
+    <h5 style="color: black;">フォロー<%= @user.followings.count %>人</h5>
+  <% end %>
+</div>
+<% if user_signed_in? && @user != current_user && current_user.email != 'guest@example.com' %>
   <% if current_user.following?(@user) %>
     <%= form_for(current_user, url: follow_path(@user), method: :delete, remote: true, id: :"follow_ #{@user.id}") do |f| %>
       <%= f.submit "フォロー解除", class: "btn btn-outline-secondary" %>
@@ -19,16 +19,4 @@
       <%= f.submit "フォローする", class: "btn btn-outline-secondary" %>
     <% end %>
   <% end %>
-<% else %>
-  <%# カレントユーザーの場合は次を表示 %>
-  <div class="follower">
-    <%= link_to followers_user_path(@user.id) do %>
-      <h5 style="color: black;">フォロワー<%= @user.followers.count %>人</h5>
-    <% end %>
-  </div>
-  <div class="follow">
-    <%= link_to following_user_path(@user.id) do %>
-      <h5 style="color: black;">フォロー<%= @user.followings.count %>人</h5>
-    <% end %>
-  </div>
 <% end %>
