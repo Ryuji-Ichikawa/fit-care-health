@@ -28,11 +28,11 @@
           </p>
         </div>
       </div>
-
+      <%# いいね機能 %>
       <div id="post_<%= @post.id %>">
         <%= render 'like', post: @post %>
       </div>
-
+      <%# コメント機能 %>
       <div class="prototype__comments">
         <% if user_signed_in? %>
           <% if current_user.email == 'guest@example.com' %>
