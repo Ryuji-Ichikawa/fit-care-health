@@ -1,27 +1,27 @@
 <main class="main">
   <div class="inner">
-    <div class="prototype__wrapper">
-      <p class="prototype__hedding">
+    <div class="post__wrapper">
+      <p class="post__hedding">
         <%= @post.title %>
       </p>
-      <%= link_to "by #{@post.user.nickname}", user_path(@post.user_id), class: :prototype__user %>
+      <%= link_to "by #{@post.user.nickname}", user_path(@post.user_id), class: :post__user %>
       <% if user_signed_in? && current_user.id == @post.user_id %>
-        <div class="prototype__manage">
-          <%= link_to "編集する", edit_post_path(@post.id), class: :prototype__btn %>
-          <%= link_to "削除する", post_path(@post.id), method: :delete, class: :prototype__btn %>
+        <div class="post__manage">
+          <%= link_to "編集する", edit_post_path(@post.id), class: :post__btn %>
+          <%= link_to "削除する", post_path(@post.id), method: :delete, class: :post__btn %>
         </div>
       <% end %>
-      <div class="prototype__image">
+      <div class="post__image">
         <%= image_tag @post.image %>
       </div>
-      <div class="prototype__body">
-        <div class="prototype__detail">
+      <div class="post__body">
+        <div class="post__detail">
           <p class="detail__title">キャッチコピー</p>
           <p class="detail__message">
             <%= @post.catch_copy %>
           </p>
         </div>
-        <div class="prototype__detail">
+        <div class="post__detail">
           <p class="detail__title">コンセプト</p>
           <p class="detail__message">
             <%= @post.concept %>
@@ -33,7 +33,7 @@
         <%= render 'like', post: @post %>
       </div>
       <%# コメント機能 %>
-      <div class="prototype__comments">
+      <div class="post__comments">
         <% if user_signed_in? %>
           <% if current_user.email == 'guest@example.com' %>
             <strong><p>※※※ コメントの投稿はゲストユーザーでは行えません ※※※</p></strong>
