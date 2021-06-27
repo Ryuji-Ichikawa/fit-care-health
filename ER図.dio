@@ -1,6 +1,6 @@
 <mxfile>
     <diagram id="H3uX23atY3ycE6rJ0-D_" name="Page-1">
-        <mxGraphModel dx="562" dy="558" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" background="#F1FAEE" math="0" shadow="1">
+        <mxGraphModel dx="968" dy="680" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" background="#F1FAEE" math="0" shadow="1">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -106,7 +106,7 @@
                 <mxCell id="ZjW3DTVX6LmB8F-jiXN5-114" value="tag_id" style="text;strokeColor=#9673a6;fillColor=#e1d5e7;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;fontSize=15;" parent="ZjW3DTVX6LmB8F-jiXN5-113" vertex="1">
                     <mxGeometry y="26" width="160" height="26" as="geometry"/>
                 </mxCell>
-                <mxCell id="ZjW3DTVX6LmB8F-jiXN5-140" value="name(string)" style="text;strokeColor=#b85450;fillColor=#f8cecc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;fontSize=15;" parent="ZjW3DTVX6LmB8F-jiXN5-113" vertex="1">
+                <mxCell id="ZjW3DTVX6LmB8F-jiXN5-140" value="tag_name(string)" style="text;strokeColor=#b85450;fillColor=#f8cecc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;fontSize=15;" parent="ZjW3DTVX6LmB8F-jiXN5-113" vertex="1">
                     <mxGeometry y="52" width="160" height="26" as="geometry"/>
                 </mxCell>
                 <mxCell id="ZjW3DTVX6LmB8F-jiXN5-117" value="  " style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;fontSize=15;" parent="ZjW3DTVX6LmB8F-jiXN5-113" vertex="1">
