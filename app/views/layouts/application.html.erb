@@ -63,12 +63,11 @@
           </li>
         </ul>
         <% end %>
-
+        <%# ヘッダー検索 %>
         <%= search_form_for @search, url: search_posts_path, local: true, class: "d-flex" do |f| %>
           <%= f.text_field :title_cont, placeholder: '検索', class: "form-control me-2" %>
           <%= f.submit ("検索する"), class: "btn btn-outline-success" %>
         <% end %>
-        
       </div>
     </div>
   </nav>
@@ -76,6 +75,7 @@
 
   <div class="main-screen">
     <%= yield %>
+    <%# バックグラウンドの動画 %>
     <video src="/videos/healthmove.mp4" autoplay loop muted class="wrap-video">
   </div>
 
