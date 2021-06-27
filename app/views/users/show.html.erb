@@ -33,13 +33,13 @@
         
         <%= render partial: "posts/post", collection: @posts %>
       </div>
-      <%# いいねの処理 %>
+      <%# いいねの表示 %>
       <h3>いいねしている投稿</h3>
       <% @user.liked_posts.each do |post| %>
         <%= post.user.email %>
         <%= post.title %>
       <% end %>
-      <%# フォロー・フォロワーの処理 %>
+      <%# フォロー・フォロワーの機能 %>
       <h3>フォロー・フォロワー数</h3>
       <div id="follow_<%= @user.id %>">
         <%= render "follow_form" %>
