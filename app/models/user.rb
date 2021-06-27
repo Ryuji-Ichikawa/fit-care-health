@@ -12,16 +12,19 @@ class User < ApplicationRecord
   def already_liked?(post)
     likes.exists?(post_id: post.id)
   end
-  has_many :posts
-  has_many :comments, dependent: :destroy
-  has_many :likes,    dependent: :destroy
-  has_many :liked_posts, through: :likes, source: :post
-  has_one_attached :image
 
-  has_many :following_follows, foreign_key: 'follower_id', class_name: 'Follow', dependent: :destroy
+  with_options dependent: :destroy do
+    has_many :posts
+    has_many :comments
+    has_many :likes
+    has_many :following_follows, foreign_key: 'follower_id', class_name: 'Follow'
+    has_many :follower_follows, foreign_key: 'following_id', class_name: 'Follow'
+  end
+  
+  has_many :liked_posts, through: :likes, source: :post
   has_many :followings, through: :following_follows
-  has_many :follower_follows, foreign_key: 'following_id', class_name: 'Follow', dependent: :destroy
   has_many :followers, through: :follower_follows
+  has_one_attached :image
 
   with_options presence: true do
     validates :nickname
