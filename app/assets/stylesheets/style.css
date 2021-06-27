@@ -89,19 +89,15 @@ header {
 .form__wrapper{
   min-height: calc(100vh - 161px);
 }
-
 .form__text {
   width: 50%;
 }
-
 .field{
   margin: 10px 0;
 }
-
 .actions{
   margin-bottom: 40px;
 }
-
 .form__btn{
   display: inline-block;
   padding: 0.4em 1.6em;
@@ -115,7 +111,6 @@ header {
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
   transition: 0.2s ease;
 }
-
 .form__btn:hover {
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
   cursor: pointer;
@@ -247,22 +242,18 @@ header {
   color: #fff;
   background: #999;
 }
-
 .post__comments{
   background-color: #f6f6f6;
   padding: 20px;
   margin: 28px 0 40px 0;
 }
-
 .comments_lists{
   padding-left: 20px;
 }
-
 .comments_list{
   list-style-type: square;
   padding-bottom: 5px;
 }
-
 .comment_user{
   font-size: 16px;
   color: #999;
@@ -300,6 +291,7 @@ header {
   justify-content: space-between;
   align-items: center;
 }
+
 /* 動画 */
 video {
   width: 100vw;
@@ -316,7 +308,6 @@ video {
 	min-height: 100%;
   z-index: -1;
 }
-
 .main-screen{
   position: relative;
 }
@@ -325,7 +316,6 @@ video {
 .footer {
   position: relative;
   background-color: #999;
-  /* padding: 10px 0; */
   z-index: 10;
 }
 .copyright {
@@ -334,26 +324,21 @@ video {
   font-size: 10px;
 }
 
-  /* いいねscss */
-
+/* いいねscss */
 .like-link {
   text-decoration: none;
 }
-
 .like-link:hover {
   background-color: #fff!important;
 }
-
 .unlike {
   font-size: 15px;
   color: #e54747;
 }
-
 .like-btn {
   font-size: 15px;
   color: #808080;
 }
- 
 .unlike-btn {
   font-size: 15px;
   color: #e54747;

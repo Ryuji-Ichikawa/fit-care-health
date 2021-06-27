@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   def index
     @tag_list = Tag.all 
     @posts = Post.all
-    @post = current_user.posts.new
+    # @post = current_user.@posts.new
   end
 
   def new
