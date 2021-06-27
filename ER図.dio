@@ -37,13 +37,13 @@
                 <mxCell id="ZjW3DTVX6LmB8F-jiXN5-83" value="post_id" style="text;strokeColor=#9673a6;fillColor=#e1d5e7;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;fontSize=15;" parent="ZjW3DTVX6LmB8F-jiXN5-82" vertex="1">
                     <mxGeometry y="26" width="160" height="26" as="geometry"/>
                 </mxCell>
-                <mxCell id="ZjW3DTVX6LmB8F-jiXN5-136" value="title" style="text;strokeColor=#b85450;fillColor=#f8cecc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;fontSize=15;" parent="ZjW3DTVX6LmB8F-jiXN5-82" vertex="1">
+                <mxCell id="ZjW3DTVX6LmB8F-jiXN5-136" value="title(string)" style="text;strokeColor=#b85450;fillColor=#f8cecc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;fontSize=15;" parent="ZjW3DTVX6LmB8F-jiXN5-82" vertex="1">
                     <mxGeometry y="52" width="160" height="26" as="geometry"/>
                 </mxCell>
-                <mxCell id="ZjW3DTVX6LmB8F-jiXN5-148" value="catch_copy" style="text;strokeColor=#b85450;fillColor=#f8cecc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;fontSize=15;" parent="ZjW3DTVX6LmB8F-jiXN5-82" vertex="1">
+                <mxCell id="ZjW3DTVX6LmB8F-jiXN5-148" value="catch_copy(text)" style="text;strokeColor=#b85450;fillColor=#f8cecc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;fontSize=15;" parent="ZjW3DTVX6LmB8F-jiXN5-82" vertex="1">
                     <mxGeometry y="78" width="160" height="26" as="geometry"/>
                 </mxCell>
-                <mxCell id="ZjW3DTVX6LmB8F-jiXN5-149" value="concept" style="text;strokeColor=#b85450;fillColor=#f8cecc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;fontSize=15;" parent="ZjW3DTVX6LmB8F-jiXN5-82" vertex="1">
+                <mxCell id="ZjW3DTVX6LmB8F-jiXN5-149" value="concept(text)" style="text;strokeColor=#b85450;fillColor=#f8cecc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;fontSize=15;" parent="ZjW3DTVX6LmB8F-jiXN5-82" vertex="1">
                     <mxGeometry y="104" width="160" height="26" as="geometry"/>
                 </mxCell>
                 <mxCell id="ZjW3DTVX6LmB8F-jiXN5-84" value="user_id" style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;fontSize=15;" parent="ZjW3DTVX6LmB8F-jiXN5-82" vertex="1">
@@ -106,7 +106,7 @@
                 <mxCell id="ZjW3DTVX6LmB8F-jiXN5-114" value="tag_id" style="text;strokeColor=#9673a6;fillColor=#e1d5e7;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;fontSize=15;" parent="ZjW3DTVX6LmB8F-jiXN5-113" vertex="1">
                     <mxGeometry y="26" width="160" height="26" as="geometry"/>
                 </mxCell>
-                <mxCell id="ZjW3DTVX6LmB8F-jiXN5-140" value="name" style="text;strokeColor=#b85450;fillColor=#f8cecc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;fontSize=15;" parent="ZjW3DTVX6LmB8F-jiXN5-113" vertex="1">
+                <mxCell id="ZjW3DTVX6LmB8F-jiXN5-140" value="name(string)" style="text;strokeColor=#b85450;fillColor=#f8cecc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;fontSize=15;" parent="ZjW3DTVX6LmB8F-jiXN5-113" vertex="1">
                     <mxGeometry y="52" width="160" height="26" as="geometry"/>
                 </mxCell>
                 <mxCell id="ZjW3DTVX6LmB8F-jiXN5-117" value="  " style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;fontSize=15;" parent="ZjW3DTVX6LmB8F-jiXN5-113" vertex="1">
@@ -118,7 +118,7 @@
                 <mxCell id="ZjW3DTVX6LmB8F-jiXN5-120" value="comment_id" style="text;strokeColor=#9673a6;fillColor=#e1d5e7;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;fontSize=15;" parent="ZjW3DTVX6LmB8F-jiXN5-119" vertex="1">
                     <mxGeometry y="26" width="160" height="26" as="geometry"/>
                 </mxCell>
-                <mxCell id="ZjW3DTVX6LmB8F-jiXN5-144" value="text" style="text;strokeColor=#b85450;fillColor=#f8cecc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;fontSize=15;" parent="ZjW3DTVX6LmB8F-jiXN5-119" vertex="1">
+                <mxCell id="ZjW3DTVX6LmB8F-jiXN5-144" value="text(text)" style="text;strokeColor=#b85450;fillColor=#f8cecc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;fontSize=15;" parent="ZjW3DTVX6LmB8F-jiXN5-119" vertex="1">
                     <mxGeometry y="52" width="160" height="26" as="geometry"/>
                 </mxCell>
                 <mxCell id="ZjW3DTVX6LmB8F-jiXN5-121" value="user_id" style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;fontSize=15;" parent="ZjW3DTVX6LmB8F-jiXN5-119" vertex="1">
