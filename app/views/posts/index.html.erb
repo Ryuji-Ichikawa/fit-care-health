@@ -1,3 +1,13 @@
+<%# タグのナビバー %>
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+<h5> タグリスト </h5>
+<%= @tag_list.each do |list| %>
+  <span>
+    <%= link_to list.tag_name, tag_posts_path(tag_id: list.id) %>
+    <%= "(#{list.posts.count})" %>
+  </span>
+<% end %>
+</nav>
 <main>
 <%# カルーセル部分の表示 %>
 <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
