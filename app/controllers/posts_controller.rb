@@ -35,6 +35,7 @@ class PostsController < ApplicationController
   end
 
   def update
+    tag_list = params[:post][:tag_name].split(nil)
     if @post.update(post_params)
       redirect_to post_path
     else
