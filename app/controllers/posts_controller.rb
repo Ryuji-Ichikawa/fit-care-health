@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   def index
     @tag_list = Tag.all 
     @posts = Post.all
-    # @post = current_user.@posts.new
+    @post = current_user.posts.new
   end
 
   def new
@@ -37,6 +37,7 @@ class PostsController < ApplicationController
   def update
     tag_list = params[:post][:tag_name].split(nil)
     if @post.update(post_params)
+      @post.save_tag(tag_list) 
       redirect_to post_path
     else
       render :edit
@@ -67,18 +68,4 @@ class PostsController < ApplicationController
     redirect_to action: :index unless user_signed_in?
   end
 
-  def save_tag(sent_tags)
-    current_tags = self.tags.pluck(:tag_name) unless self.tags.nil?
-    old_tags = current_tags - sent_tags
-    new_tags = sent_tags - current_tags
-
-    old_tags.each do |old|
-      self.post_tags.delete PostTag.find_by(tag_name: old)
-    end
-
-    new_tags.each do |new|
-      new_post_tag = PostTag.find_or_create_by(tag_name: new)
-      self.post_tags << new_post_tag
-    end
-  end
 end

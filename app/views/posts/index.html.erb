@@ -1,7 +1,7 @@
 <%# タグのナビバー %>
 <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-<h5> タグリスト </h5>
-<%= @tag_list.each do |list| %>
+<h5> タグリスト: </h5>
+<% @tag_list.each do |list| %>
   <span>
     <%= link_to list.tag_name, tag_posts_path(tag_id: list.id) %>
     <%= "(#{list.posts.count})" %>

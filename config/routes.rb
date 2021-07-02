@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   }
   root to: 'posts#index'
 
+  # 投稿のルーティング
   resources :posts do
     resources :comments, only: :create
     collection do
@@ -13,7 +14,13 @@ Rails.application.routes.draw do
     post 'likes' => "likes#create"
     delete 'likes' => "likes#destroy"
   end
+
+  # タグのルーティング
+  resources :tags do
+    get 'posts', to: 'posts#search'
+  end
   
+  # ユーザーのルーティング
   resources :users, only: [:show, :edit, :update]
   resources :users do
     member do
