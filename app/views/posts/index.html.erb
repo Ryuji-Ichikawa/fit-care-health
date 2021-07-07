@@ -2,9 +2,9 @@
 <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
 <h5> タグリスト: </h5>
 <% @tag_list.each do |list| %>
-  <span class="navbar-nav me-auto mb-2 mb-md-0">
-    <%= link_to "#{list.tag_name}(#{list.posts.count})", tag_posts_path(tag_id: list.id) %>
-  </span>
+  <div class="navbar-nav me-auto mb-2 mb-md-0">
+    <%= link_to "#{list.tag_name}:#{list.posts.count}", tag_posts_path(tag_id: list.id), class: "nav-link"  %>
+  </div>
 <% end %>
 </nav>
 <main>
