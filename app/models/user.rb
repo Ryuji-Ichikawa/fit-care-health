@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  # ゲスト機能のモデル
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|
       user.nickname = 'ゲスト'
@@ -8,7 +9,7 @@ class User < ApplicationRecord
       user.profile = 'No Profile'
     end
   end
-
+  #いいね機能のモデル
   def already_liked?(post)
     likes.exists?(post_id: post.id)
   end
@@ -30,7 +31,7 @@ class User < ApplicationRecord
     validates :nickname
     validates :profile
   end
-
+  #フォロー機能のモデル
   def following?(user)
     following_follows.find_by(following_id: user.id)
   end
