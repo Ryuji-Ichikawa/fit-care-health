@@ -50,8 +50,14 @@ class PostsController < ApplicationController
   end
 
   def search
-    @q = Post.ransack(params[:q])
-    @posts = @q.result(distinct: true)
+    if params[:tag_id] == nil
+      @q = Post.ransack(params[:q])
+      @posts = @q.result(distinct: true)
+    else
+      @tag_list = Tag.all
+      @tag = Tag.find(params[:tag_id])
+      @posts = @tag.posts.all
+    end
   end
 
   private

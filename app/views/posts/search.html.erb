@@ -1,7 +1,9 @@
+<h2> 投稿一覧</h2>
+
 <%# 左右で交互に表示させたいのでcount変数を作り奇数偶数を設定 %>
 <% count = 0 %>
-<% @search_posts.each do |post| %>
-<hr class="featurette-divider">
+<% @posts.each do |post| %>
+  <hr class="featurette-divider">
   <div class="row featurette">
     <% if count == 0 || count % 2 == 0 %>
         <div class="col-md-7 order-md-2">
@@ -23,6 +25,6 @@
     <%= link_to "by #{post.user.nickname}", user_path(post.user.id), class: :card__user %>
         </div>
   </div>
-    <% count += 1 %>
+  <% count += 1 %>
 <% end %>
 <hr class="featurette-divider">
