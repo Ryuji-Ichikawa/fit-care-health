@@ -1,13 +1,11 @@
 <%# タグのナビバー %>
 <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-  <form class="container-fluid justify-content-start">
+  <div class="container-fluid justify-content-start">
     <%= link_to "タグリスト ", root_path, class: "navbar-brand" %>
     <% @tag_list.each do |list| %>
-      <button class="btn btn-sm btn-outline-secondary" type="button">
-        <%= link_to "#{list.tag_name}:#{list.posts.count}", tag_posts_path(tag_id: list.id), class: "nav-link"  %>
-      </button>
+      <%= link_to "#{list.tag_name}", tag_posts_path(tag_id: list.id), class: "btn btn-sm btn-outline-secondary"  %>
     <% end %>
-  </form>
+  </div>
 </nav>
 <main>
 <%# カルーセル部分の表示 %>
