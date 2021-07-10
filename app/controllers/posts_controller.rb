@@ -5,7 +5,6 @@ class PostsController < ApplicationController
   def index
     @tag_list = Tag.all
     @posts = Post.includes(:user)
-    @post = current_user.posts.new
   end
 
   def new
