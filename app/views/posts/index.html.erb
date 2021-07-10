@@ -3,7 +3,7 @@
   <div class="container-fluid justify-content-start">
     <%= link_to "タグリスト ", root_path, class: "navbar-brand" %>
     <% @tag_list.each do |list| %>
-      <%= link_to "#{list.tag_name}", tag_posts_path(tag_id: list.id), class: "btn btn-sm btn-outline-secondary"  %>
+      <%= link_to "#{list.tag_name}(#{list.posts.count})", tag_posts_path(tag_id: list.id), class: "btn btn-sm btn-outline-secondary"  %>
     <% end %>
   </div>
 </nav>
