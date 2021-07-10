@@ -3,8 +3,8 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :move_to_index, except: [:index, :show, :search]
   def index
-    @tag_list = Tag.all 
-    @posts = Post.all
+    @tag_list = Tag.all
+    @posts = Post.includes(:user)
     @post = current_user.posts.new
   end
 
