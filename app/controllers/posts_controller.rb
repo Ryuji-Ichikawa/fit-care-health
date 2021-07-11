@@ -15,7 +15,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.new(post_params)
     tag_list = params[:post][:tag_name].split(nil)
     if @post.save
-      @post.save_tag(tag_list) 
+      @post.save_tag(tag_list)
       redirect_to root_path
     else
       render :new
@@ -23,7 +23,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post_tags = @post.tags 
+    @post_tags = @post.tags
     @comment = Comment.new
     @comments = @post.comments.includes(:user)
     @like = Like.new
@@ -36,7 +36,7 @@ class PostsController < ApplicationController
   def update
     tag_list = params[:post][:tag_name].split(nil)
     if @post.update(post_params)
-      @post.save_tag(tag_list) 
+      @post.save_tag(tag_list)
       redirect_to post_path
     else
       render :edit
@@ -49,7 +49,7 @@ class PostsController < ApplicationController
   end
 
   def search
-    if params[:tag_id] == nil
+    if params[:tag_id].nil?
       @q = Post.ransack(params[:q])
       @posts = @q.result(distinct: true)
     else
@@ -72,5 +72,4 @@ class PostsController < ApplicationController
   def move_to_index
     redirect_to action: :index unless user_signed_in?
   end
-
 end

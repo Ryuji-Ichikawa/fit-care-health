@@ -16,21 +16,21 @@ class Post < ApplicationRecord
     validates :image
   end
 
-  #タグを保存する処理
+  # タグを保存する処理
   def save_tag(sent_tags)
-    current_tags = self.tags.pluck(:tag_name) unless self.tags.nil?
+    current_tags = tags.pluck(:tag_name) unless tags.nil?
     old_tags = current_tags - sent_tags
     new_tags = sent_tags - current_tags
 
-    #古いタグの削除
+    # 古いタグの削除
     old_tags.each do |old|
-      self.tags.delete Tag.find_by(tag_name: old)
+      tags.delete Tag.find_by(tag_name: old)
     end
 
-    #新しいタグの保存
+    # 新しいタグの保存
     new_tags.each do |new|
       new_post_tag = Tag.find_or_create_by(tag_name: new)
-      self.tags << new_post_tag
+      tags << new_post_tag
     end
   end
 end
