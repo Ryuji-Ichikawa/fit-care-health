@@ -5,6 +5,8 @@ FactoryBot.define do
     password              { Faker::Internet.password(min_length: 6) }
     password_confirmation { password }
     profile               { Faker::Lorem.sentence }
-    image { Faker::Lorem.sentence }
+    after(:build) do |user|
+      user.image.attach(io: File.open('public/image/test-image.jpg'), filename: 'test-image.jpg')
+    end
   end
 end
