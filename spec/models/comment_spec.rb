@@ -15,17 +15,17 @@ RSpec.describe Comment, type: :model do
       it 'テキストが空だとコメントは保存できない' do
         @comment.text = ''
         @comment.valid?
-        expect(@comment.errors.full_messages).to include "テキストを入力してください"
+        expect(@comment.errors.full_messages).to include "Text can't be blank"
       end
       it 'ユーザーが紐付いていないとコメントは保存できない' do
         @comment.user = nil
         @comment.valid?
-        expect(@comment.errors.full_messages).to include "Userを入力してください"
+        expect(@comment.errors.full_messages).to include "User must exist"
       end
       it 'コメントされている投稿が紐付いていないとコメントは保存できない' do
-        @comment.tweet = nil
+        @comment.post = nil
         @comment.valid?
-        expect(@comment.errors.full_messages).to include "Tweetを入力してください"
+        expect(@comment.errors.full_messages).to include "Post must exist"
       end
     end
   end
