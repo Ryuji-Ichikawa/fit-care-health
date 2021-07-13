@@ -57,4 +57,49 @@ RSpec.describe User, type: :model do
       end
     end
   end
+  describe 'アソシエーション' do
+    let(:association) do
+       described_class.reflect_on_association(target)
+    end
+
+    context 'Postモデルとの関係' do
+      let(:target) { :posts }
+      it '1:多' do
+        expect(association.macro).to eq :has_many
+      end
+      it '結合するモデルのクラス名：Post' do
+        expect(association.class_name).to eq 'Post'
+      end
+    end
+
+    context 'Likeモデルとの関係' do
+      let(:target) { :likes }
+      it '1:多' do
+        expect(association.macro).to eq :has_many
+      end
+      it '結合するモデルのクラス名：Like' do
+        expect(association.class_name).to eq 'Like'
+      end
+    end
+
+    context 'Follow(Following)モデルとの関係' do
+      let(:target) { :following_follows }
+      it '1:多' do
+        expect(association.macro).to eq :has_many
+      end
+      it '結合するモデルのクラス：Follow' do
+        expect(association.class_name).to eq 'Follow'
+      end
+    end
+
+    context 'Follow(Follower)モデルとの関係' do
+      let(:target) { :follower_follows }
+      it '1:多' do
+        expect(association.macro).to eq :has_many
+      end
+      it '結合するモデルのクラス：Follow' do
+        expect(association.class_name).to eq 'Follow'
+      end
+    end
+  end
 end
