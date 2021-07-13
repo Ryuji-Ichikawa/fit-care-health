@@ -39,4 +39,60 @@ RSpec.describe Post, type: :model do
       end
     end
   end
+
+  describe 'アソシエーション' do
+    let(:association) do
+       described_class.reflect_on_association(target)
+    end
+
+    context 'Commentモデルとの関係' do
+      let(:target) { :comments }
+      it '1:多' do
+        expect(association.macro).to eq :has_many
+      end
+      it '結合するモデルのクラス名：Comment' do
+        expect(association.class_name).to eq 'Comment'
+      end
+    end
+
+    context 'Likeモデルとの関係' do
+      let(:target) { :likes }
+      it '1:多' do
+        expect(association.macro).to eq :has_many
+      end
+      it '結合するモデルのクラス名：Like' do
+        expect(association.class_name).to eq 'Like'
+      end
+    end
+
+    context 'Tagモデルとの関係' do
+      let(:target) { :tags }
+      it '1:多' do
+        expect(association.macro).to eq :has_many
+      end
+      it '結合するモデルのクラス名：TagTweet' do
+        expect(association.class_name).to eq 'Tag'
+      end
+    end
+
+    context 'TagMapモデルとの関係' do
+      let(:target) { :tag_maps }
+      it '1:多' do
+        expect(association.macro).to eq :has_many
+      end
+      it '結合するモデルのクラス名：TagMap' do
+        expect(association.class_name).to eq 'TagMap'
+      end
+    end
+
+    context 'Userモデルとの関係' do
+      let(:target) { :user }
+      it '1:1' do
+        expect(association.macro).to eq :belongs_to
+      end
+      it '結合するモデルのクラス：User' do
+        expect(association.class_name).to eq 'User'
+      end
+    end
+  end
 end
