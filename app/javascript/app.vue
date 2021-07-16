@@ -8,6 +8,7 @@
 export default {
   data: function () {
     return {
+      // Hello Vueを描写する
       message: "Hello Vue!"
     }
   }
