@@ -4,17 +4,17 @@
 ユーザー同士で健康をシェアすることによって、新しい発見をすることができます。
 検索ソート機能などが実装されております。
 
-<!-- ---
-# 実装した機能についての画像やGIFおよびその説明
-実装した機能について、それぞれどのような特徴があるのかを列挙する形で記述。画像はGyazoで、GIFはGyazoGIFで撮影すること。 -->
-## TOP画像
-
-[![Image from Gyazo](https://i.gyazo.com/f74796ba33b071797f472ece530f410c.gif)](https://gyazo.com/f74796ba33b071797f472ece530f410c)
-
-
 ---
 ## URL
  https://fit-care-health.com/
+
+<!-- ---
+# 実装した機能についての画像やGIFおよびその説明
+実装した機能について、それぞれどのような特徴があるのかを列挙する形で記述。画像はGyazoで、GIFはGyazoGIFで撮影すること。 -->
+
+## TOP画像
+
+[![Image from Gyazo](https://i.gyazo.com/f74796ba33b071797f472ece530f410c.gif)](https://gyazo.com/f74796ba33b071797f472ece530f410c)
 
 ## テスト用アカウント
 
