@@ -20,9 +20,10 @@
     <div class="carousel-item active">
       <%= image_tag "health1.jpg", class:"d-block w-100"%>
       <div class="container">
-        <div class="carousel-caption text-start">
+        <div class="carousel-caption text-start upper">
           <h1>あなたも健康的な生活を</h1>
           <p>お互いの健康に関することをシェアしあって日々より良い生活を送っていきましょう！</p>
+          <br>
           <% if user_signed_in? %>
             <% if current_user.email == 'guest@example.com' %>
             <% else %>
@@ -41,6 +42,7 @@
         <div class="carousel-caption text-start">
           <h1>様々な方が健康的に過ごしています</h1>
           <p>もっとみるを選択することによって、いろんな方の健康法やフィットネス方法、サプリメントなど、健康に関する情報の詳細を見ることができます</p>
+          <br>
           <%= link_to "もっとみる", search_posts_path, class: "btn btn-lg btn-primary" %>
         </div>
       </div>
@@ -49,9 +51,10 @@
     <div class="carousel-item">
       <%= image_tag "health3.jpg", class:"d-block w-100"%>
       <div class="container">
-        <div class="carousel-caption text-start">
+        <div class="carousel-caption text-start upper">
           <h1>自身の健康をチェックしてみませんか？</h1>
           <p>プロフィール欄にある健康チェックを行うことで、自身の日々の健康状態をチェックすることができます</p>
+          <br>
           <% if user_signed_in? %>
             <% if current_user.email == 'guest@example.com' %>
             <% else %>
