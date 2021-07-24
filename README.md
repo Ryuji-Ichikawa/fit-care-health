@@ -45,20 +45,20 @@
 
 ---
 # 使用技術(開発環境)
-- フロントエンド
+## フロントエンド
 	- HTML/CSS
 	- JavaScript(Ajax)
 	- Bootstrap 5.0
-- バックエンド
+## バックエンド
 	- Ruby 2.6.5
 	- Ruby on Rails 6.1.3
-- インフラ
+## インフラ
 	- MySQL 5.6.51
 	- Nginx
 	- Unicorn
 	- AWS (VPC, IAM, EC2, RDS(MySQL), S3, Route53, ALB, ACM, CloudWatch)
 	- Docker/docker-compose
-- チェックツール
+## チェックツール
 	- Rspec
 	- Rubocop
 	- AWS (Inspector)
