@@ -46,23 +46,23 @@
 ---
 # 使用技術(開発環境)
 ## フロントエンド
-	- HTML/CSS
-	- JavaScript(Ajax)
-	- Bootstrap 5.0
+- HTML/CSS
+- JavaScript(Ajax)
+- Bootstrap 5.0
 ## バックエンド
-	- Ruby 2.6.5
-	- Ruby on Rails 6.1.3
+- Ruby 2.6.5
+- Ruby on Rails 6.1.3
 ## インフラ
-	- MySQL 5.6.51
-	- Nginx
-	- Unicorn
-	- AWS (VPC, IAM, EC2, RDS(MySQL), S3, Route53, ALB, ACM, CloudWatch)
-	- Docker/docker-compose
+- MySQL 5.6.51
+- Nginx
+- Unicorn
+- AWS (VPC, IAM, EC2, RDS(MySQL), S3, Route53, ALB, ACM, CloudWatch)
+- Docker/docker-compose
 ## チェックツール
-	- Rspec
-	- Rubocop
-	- AWS (Inspector)
-	- CircleCI
+- Rspec
+- Rubocop
+- AWS (Inspector)
+- CircleCI
 
 # インフラ構成図
 <img width="900" alt="インフラ構成図" src=https://user-images.githubusercontent.com/68750516/122555268-0b0bb600-d075-11eb-827a-95b096ef9325.png>
