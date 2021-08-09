@@ -201,4 +201,5 @@
 - belongs_to :tag
 
 ## ER図
+
 <img width="899" alt="ER図" src="https://user-images.githubusercontent.com/68750516/123537425-5eaf8b00-d76a-11eb-80e1-5a574638d98f.png">
