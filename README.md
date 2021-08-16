@@ -67,6 +67,7 @@
 - CircleCI
 
 # インフラ構成図
+
 <img width="900" alt="インフラ構成図" src=https://user-images.githubusercontent.com/68750516/122555268-0b0bb600-d075-11eb-827a-95b096ef9325.png>
 
 ---
