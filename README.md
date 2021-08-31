@@ -14,7 +14,7 @@
 実装した機能について、それぞれどのような特徴があるのかを列挙する形で記述。
 画像はGyazoで、GIFはGyazoGIFで撮影すること。 -->
 
----  
+---
 ## TOP画像
 
 [![Image from Gyazo](https://i.gyazo.com/f74796ba33b071797f472ece530f410c.gif)](https://gyazo.com/f74796ba33b071797f472ece530f410c)
