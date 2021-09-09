@@ -109,7 +109,7 @@
 | birthday           | date       | null: false                    |
 | status             | references | null: false, foreign_key: true |
 
-#### Association 
+#### Association
 
 - has_many :posts
 - has_many :comments, dependent: :destroy
