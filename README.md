@@ -15,7 +15,7 @@
 画像はGyazoで、GIFはGyazoGIFで撮影すること。 -->
 
 ---
-## TOP画像 
+## TOP画像
 
 [![Image from Gyazo](https://i.gyazo.com/f74796ba33b071797f472ece530f410c.gif)](https://gyazo.com/f74796ba33b071797f472ece530f410c)
 
