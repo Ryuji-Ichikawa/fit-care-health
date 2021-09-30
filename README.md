@@ -20,7 +20,7 @@
 [![Image from Gyazo](https://i.gyazo.com/f74796ba33b071797f472ece530f410c.gif)](https://gyazo.com/f74796ba33b071797f472ece530f410c)
 
 ---
-## テスト用アカウント　
+## テスト用アカウント
 
 	ログイン機能  
 	メールアドレス：test@test  
