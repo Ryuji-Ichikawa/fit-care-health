@@ -7,7 +7,9 @@
 ---
 ## URL
 
- https://fit-care-health.com/  (現在休止中)  
+https://fit-care-health.herokuapp.com/
+
+（現在AWSコストを抑える為Herokuでのデプロイになります）
 
 <!-- ---
 実装した機能についての画像やGIFおよびその説明
