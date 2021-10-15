@@ -9,7 +9,7 @@
 
 https://fit-care-health.herokuapp.com/
 
-（現在AWSコストを抑える為Herokuでのデプロイになります。
+（現在AWSコストを抑える為Herokuでのデプロイになります。  
 深夜帯以外はSleepモードにならない仕様にしております）
 
 <!-- ---
