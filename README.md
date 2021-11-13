@@ -15,7 +15,7 @@ https://fit-care-health.herokuapp.com/
 <!-- ---
 実装した機能についての画像やGIFおよびその説明
 実装した機能について、それぞれどのような特徴があるのかを列挙する形で記述。
-画像はGyazoで、GIFはGyazoGIFで撮影すること。 --> 　
+画像はGyazoで、GIFはGyazoGIFで撮影すること。 --> 
 
 ---
 ## TOP画像
